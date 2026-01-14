@@ -20,14 +20,14 @@ body {
   color: #4b4b4b;
   background: #ffffff;
 }
-
+/* 
 body.solutions-page {
   background-image: url('assets/new-year-background.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-}
+} */
 
 img {
   max-width: 100%;

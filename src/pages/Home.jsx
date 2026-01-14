@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import Header from "../components/Header";      
+import Footer from "../components/Footer";
 
 export default function Home() {
 
@@ -28,20 +30,9 @@ export default function Home() {
   }, []);
 
   return (
+    <>
+     <Header />
     <div className="page">
-      <header className="topbar">
-        <div className="container nav">
-          <img src="/assets/froid-logo-large.png" alt="Froid logo" className="logo" />
-          <nav className="nav-links">
-            <a href="/">HOME</a>
-            <a href="/#about">ABOUT</a>
-            <a href="/solutions">SOLUTIONS</a>
-            <a href="/customers" className="active">CUSTOMERS</a>
-          </nav>
-          <a className="btn btn-light" href="/#contact">CONTACT US</a>
-        </div>
-      </header>
-
     <section id="home" className="hero">
         <div className="hero-bg" />
 
@@ -255,60 +246,9 @@ export default function Home() {
             />
         </div>
         </div>
-    </section>
-
-    <section className="cta">
-        <div className="container cta-row">
-        <div className="cta-text">
-            ready to transform the way your operations perform?
-        </div>
-        <a className="btn btn-primary" href="/demo">
-            SCHEDULE A DEMO
-        </a>
-        </div>
-    </section>
-
-    <footer id="contact" className="footer">
-        <div className="container footer-grid">
-        <div>
-            <img
-            src="assets/froid-logo.png"
-            alt="Froid"
-            className="footer-logo"
-            />
-
-            <p className="footer-address">
-            Nilampathinjamugal Rajagiri <br />
-            Valley Rd, Kakkanad, Kerala 682039
-            </p>
-
-            <div className="footer-contact">
-            <p><strong>Email</strong> sales@teraobjects.com</p>
-            <p><strong>Phone</strong> (+91)-</p>
-            </div>
-
-            <div className="social-row">
-            <img src="assets/linkedin-icon.png" alt="LinkedIn" />
-            <img src="assets/social-icon.png" alt="Social" />
-            <img src="assets/youtube-icon.png" alt="YouTube" />
-            </div>
-        </div>
-
-        <div>
-            <h4 className="footer-heading">Solutions</h4>
-            <ul className="footer-list">
-            <li>Field Service</li>
-            <li>Facility Maintenance</li>
-            </ul>
-        </div>
-
-        <div className="footer-badges">
-            <img src="assets/google-play.png" alt="Google Play" />
-            <img src="assets/app-store.png" alt="App Store" />
-        </div>
-        </div>
-    </footer>
+    </section> 
     </div>
-
+    <Footer />
+    </>
   );
 }

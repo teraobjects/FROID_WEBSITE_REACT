@@ -1,20 +1,18 @@
-<header className="topbar">
-  <div className="container nav">
-    <img
-      src="assets/froid-logo-large.png"
-      alt="Froid logo"
-      className="logo"
-    />
+export default function Header() {
+  return (
+    <header className="topbar">
+      <div className="container nav">
+        <img src="/assets/froid-logo-large.png" alt="Froid" className="logo" />
 
-    <nav className="nav-links">
-      <Link to="/#home">HOME</Link>
-      <Link to="/#about">ABOUT</Link>
-      <Link to="/solutions" className="active">SOLUTIONS</Link>
-      <Link to="/customers">CUSTOMERS</Link>
-    </nav>
+        <nav className="nav-links">
+          <a href="/">HOME</a>
+          <a href="/#about">ABOUT</a>
+          <a href="/solutions">SOLUTIONS</a>
+          <a href="/customers">CUSTOMERS</a>
+        </nav>
 
-    <Link className="btn btn-light" to="/#contact">
-      CONTACT US
-    </Link>
-  </div>
-</header>
+        <a className="btn btn-light" href="#contact">CONTACT US</a>
+      </div>
+    </header>
+  );
+}

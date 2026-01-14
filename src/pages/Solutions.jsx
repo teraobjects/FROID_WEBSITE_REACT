@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import Header from "../components/Header";      
+import Footer from "../components/Footer";
 
 export default function Solutions() {
 
@@ -8,30 +10,9 @@ export default function Solutions() {
   }, []);
 
   return (
+    <>
+      <Header />
     <div className="page">
-
-      {/* ================= HEADER ================= */}
-      <header className="topbar">
-        <div className="container nav">
-          <img
-            src="/assets/froid-logo-large.png"
-            alt="Froid logo"
-            className="logo"
-          />
-
-          <nav className="nav-links">
-            <a href="/">HOME</a>
-            <a href="/#about">ABOUT</a>
-            <a href="/solutions" className="active">SOLUTIONS</a>
-            <a href="/customers">CUSTOMERS</a>
-          </nav>
-
-          <a className="btn btn-light" href="/#contact">
-            CONTACT US
-          </a>
-        </div>
-      </header>
-
       {/* ================= HERO ================= */}
       <section className="solutions-hero">
         <div className="solutions-hero-inner container">
@@ -178,41 +159,9 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
-      <section className="cta">
-        <div className="container cta-row">
-          <div className="cta-text">
-            Ready to transform the way your operations perform?
-          </div>
-          <a className="btn btn-primary" href="/demo">
-            SCHEDULE A DEMO
-          </a>
-        </div>
-      </section>
-
       {/* ================= FOOTER ================= */}
-      <footer id="contact" className="footer">
-        <div className="container footer-grid">
-
-          <div className="footer-col">
-            <span className="footer-logo-text">TeraObjects</span>
-            <p className="footer-address">
-              Nilampathinjamugal Rajagiri Valley Rd, Kakkanad, Kerala 682039
-            </p>
-            <p><strong>Email</strong> sales@teraobjects.com</p>
-            <p><strong>Phone</strong> (+91) 9656 589 034</p>
-          </div>
-
-          <div className="footer-col">
-            <p className="footer-address">
-              57 Genting Lane, #04-00 Gani Building, Singapore 349564
-            </p>
-            <p><strong>Email</strong> sales@oredicksolutions.com.sg</p>
-            <p><strong>Phone</strong> (+65) 9016 5538</p>
-          </div>
-
-        </div>
-      </footer>
     </div>
+    <Footer />
+    </>
   );
 }
