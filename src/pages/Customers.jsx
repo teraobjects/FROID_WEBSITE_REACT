@@ -50,7 +50,7 @@ export default function Customers() {
                 className="world-map-image"
               />
 
-              <div className="map-pin pin-1" data-location="KERALA"></div>
+              <div className="map-pin pin-1" data-location="India"></div>
               <div className="map-pin pin-2" data-location="Saudi Arabia"></div>
               <div className="map-pin pin-3" data-location="Nepal"></div>
               <div className="map-pin pin-4" data-location="Singapore"></div>
