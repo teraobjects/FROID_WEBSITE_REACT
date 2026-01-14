@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Demo | Froid</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<style>
+*{box-sizing:border-box}
+body{
+  font-family:Poppins,sans-serif;
+  margin:0;
+  padding-top:90px;   /* Space for fixed navbar */
+}
+
+/* =========================
+   FROID NAVBAR
+========================= */
+.froid-header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#fff;
+  z-index:9999;
+  box-shadow:0 2px 20px rgba(0,0,0,0.06);
+}
+
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:18px 30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.logo img{height:36px}
+
+.nav-links{
+  display:flex;
+  gap:40px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  font-size:15px;
+  color:#1f4cff;
+  font-weight:500;
+}
+
+.btn-contact{
+  padding:12px 28px;
+  background:linear-gradient(135deg,#2b7bff,#61a0ff);
+  color:#fff;
+  text-decoration:none;
+  border-radius:30px;
+  font-weight:600;
+  box-shadow:0 8px 30px rgba(0,80,255,0.25);
+}
+
+/* =========================
+   DEMO PAGE
+========================= */
+.demo-hero{
+  background:#1a1a1a;
+  padding:120px 20px;
+  text-align:center;
+  color:#fff;
+}
+
+.demo-content{
+  padding:60px 20px;
+  background:#ffffff;
+}
+
+.demo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.demo-form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  padding:12px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-family:Poppins;
+}
+
+.form-submit{
+  background:#1a1a1a;
+  color:#fff;
+  border:none;
+  padding:14px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.form-submit:hover{background:#295bce}
+
+@media(max-width:900px){
+  .demo-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+<header class="froid-header">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="assets/froid-logo.png" alt="Froid">
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="customers.html">Customers</a>
+    </nav>
+
+    <a href="contact.html" class="btn-contact">Contact Us</a>
+  </div>
+</header>
+
+<!-- =========================
+     HERO
+========================= -->
+<section class="demo-hero">
+  <h1>Request a Demo</h1>
+  <p>See how Froid can transform your business.</p>
+</section>
+
+<section class="demo-content">
+<div class="demo-grid">
+
+<div>
+  <h2>What to Expect</h2>
+  <p>Personalized demo, live Q&A, and no commitment.</p>
+</div>
+
+<!-- =========================
+     FORM
+========================= -->
+<form class="demo-form" 
+      action="https://api.web3forms.com/submit" 
+      method="POST">
+
+<input type="hidden" name="access_key" value="002ab0c6-8577-43f7-b66f-cf354cb8d35e">
+<input type="hidden" name="subject" value="New Demo Request - Froid">
+<input type="hidden" name="from_name" value="Froid Website">
+<input type="hidden" name="redirect" value="thankyou.html">
+
+<div class="form-group">
+<input type="text" name="First Name" placeholder="First Name" required>
+</div>
+
+<div class="form-group">
+<input type="text" name="Last Name" placeholder="Last Name" required>
+</div>
+
+<div class="form-group">
+<input type="email" name="Email" placeholder="Work Email" required>
+</div>
+
+<div class="form-group">
+<input type="text" name="Company" placeholder="Company Name" required>
+</div>
+
+<div class="form-group">
+<input type="tel" name="Phone" placeholder="Phone Number">
+</div>
+
+<div class="form-group">
+<input type="text" name="Job Title" placeholder="Job Title">
+</div>
+
+<div class="form-group">
+<select name="Company Size">
+<option value="">Company Size</option>
+<option>1–10</option>
+<option>11–50</option>
+<option>51–200</option>
+<option>201–500</option>
+<option>500+</option>
+</select>
+</div>
+
+<div class="form-group">
+<textarea name="Requirements" placeholder="Tell us about your needs"></textarea>
+</div>
+
+<button type="submit" class="form-submit">Request Demo</button>
+
+</form>
+
+</div>
+</section>
+
+    <footer id="contact" class="footer">
+      <div class="container footer-grid">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <div class="footer-logo-wrapper">
+            <div class="footer-logo-icon"></div>
+            <span class="footer-logo-text">TeraObjects</span>
+          </div>
+          <p class="footer-address">
+            Nilampathinjamugal Rajagiri Valley Rd, Kakkanad, Kerala 682039
+          </p>
+          <div class="footer-contact">
+            <p><strong>Contact Sales</strong> sales@teraobjects.com</p>
+            <p><strong>Phone</strong> (+91) 9656 589 034</p>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <p class="footer-address">
+            57 Genting Lane, #04-00 Gani Building, Singapore 349564
+          </p>
+          <div class="footer-contact">
+            <p><strong>Email</strong> sales@oredicksolutions.com.sg</p>
+            <p><strong>Phone</strong> (+65) 9016 5538</p>
+          </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-list">
+            <li>Facility Maintenance</li>
+            <li>Field Service</li>
+          </ul>
+
+          <div class="social-row">
+            <a href="https://www.linkedin.com/company/teraobjects" target="_blank">
+              <img src="assets/linkedin-icon.png">
+            </a>
+            <a href="https://www.instagram.com/TerarobotsIndia" target="_blank">
+              <img src="assets/social-icon.png">
+            </a>
+            <a href="https://www.youtube.com/@TerarobotsIndia" target="_blank">
+              <img src="assets/youtube-icon.png">
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 4 (Badges + Phone) -->
+        <div class="footer-col footer-col-badges">
+          <div class="footer-badges">
+            <img src="assets/app-store.png">
+            <img src="assets/google-play.png">
+          </div>
+
+          <div class="footer-illustration">
+            <img src="assets/contact-image.png">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+</body>
+</html>

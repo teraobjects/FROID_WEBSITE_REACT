@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Froid | AI Powered Field Service</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const counters = document.querySelectorAll(".counter");
+
+  counters.forEach(counter => {
+    const target = +counter.getAttribute("data-target");
+    let current = 0;
+    const speed = 100;   // bigger = slower
+
+    const updateCounter = () => {
+      const increment = target / speed;
+
+      if (current < target) {
+        current += increment;
+        counter.innerText = Math.ceil(current);
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+
+    updateCounter();
+  });
+
+});
+</script>
+
+  <div class="page">
+    <header class="topbar">
+      <div class="container nav">
+        <img src="assets/froid-logo-large.png" alt="Froid logo" class="logo">
+        <nav class="nav-links">
+          <a href="#home" class="active">HOME</a>
+          <a href="#about">ABOUT</a>
+          <a href="solutions.html">SOLUTIONS</a>
+          <a href="customers.html">CUSTOMERS</a>
+        </nav>
+        <a class="btn btn-light" href="#contact">CONTACT US</a>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-wrapper">
+        <div class="hero-content">
+          <h1>one-stop app for<br><span class="highlight">hassle-free service</span></h1>
+          <!-- <p class="subtitle">AI Powered Field Service Solution</p> -->
+        </div>
+      </div>
+      
+      <!-- Hero Icons with connecting lines -->
+      <div class="hero-icons-container">
+        <!-- Center Woman -->
+          <div class="hero-woman">
+          <img src="assets/women_landing_page.png" alt="Woman using phone">
+        </div>
+      <!-- Floating Icons -->
+<div class="hero-float-icons">
+
+  <!-- LEFT SIDE -->
+  <img src="assets/setting.png" class="float-icon left one">
+  <img src="assets/Group 11.png" class="float-icon left two">
+  <img src="assets/Group 9.png" class="float-icon left three">
+
+  <!-- RIGHT SIDE -->
+  <img src="assets/shake.png" class="float-icon right one">
+  <img src="assets/refresh.png" class="float-icon right two">
+  <img src="assets/setting.png" class="float-icon right three">
+
+</div>
+        
+        <!-- Connecting lines -->
+        <svg class="icon-connections" width="100%" height="100%" preserveAspectRatio="none">
+          <!-- Left side connections -->
+          <line x1="8%" y1="15%" x2="12%" y2="28%" stroke="white" stroke-width="2" opacity="0.4"/>
+          <line x1="12%" y1="28%" x2="10%" y2="50%" stroke="white" stroke-width="2" opacity="0.4"/>
+          <!-- Right side connections -->
+          <line x1="88%" y1="18%" x2="90%" y2="35%" stroke="white" stroke-width="2" opacity="0.4"/>
+          <line x1="90%" y1="35%" x2="86%" y2="55%" stroke="white" stroke-width="2" opacity="0.4"/>
+        </svg>
+      </div>
+    </section>
+
+<section class="stats">
+  <div class="container stats-grid">
+
+    <div class="stat">
+      <div class="stat-value counter" data-target="5">0</div>
+      <div class="stat-label">clients</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-value counter" data-target="80">0</div>
+      <div class="stat-label">no of machines</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-value counter" data-target="1000">0</div>
+      <div class="stat-label"> users</div>
+    </div>
+
+  </div>
+</section>
+
+    <section id="solutions" class="section">
+      <div class="container">
+        <h2 class="section-title">key benefits</h2>
+        <div class="benefits-icons">
+          <div class="benefit">
+            <img src="assets/rocket-icon.png" alt="AI Driven">
+            <p>ai driven</p>
+            <small>smart solutions. simple results.</small>
+          </div>
+          <div class="benefit">
+            <img src="assets/group 1.png" alt="Seamless UX">
+            <p>seamless User experience</p>
+            <small> fast and seamless.</small>
+          </div>
+          <div class="benefit">
+            <img src="assets/resize-icon.png" alt="Efficiency">
+            <p>operational efficiency</p>
+            <small>we handle it all.</small>
+          </div>
+          <div class="benefit">
+            <img src="assets/security-icon.png" alt="Processes">
+            <p>streamline business processes</p>
+            <small>feature-rich and budget-friendly.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light">
+      <div class="container solution">
+        <h2 class="section-title">our solution</h2>
+        <p class="section-subtitle">innovative solution tailored to elevate your business in the digital era</p>
+        <div class="solution-content">
+          <img src="assets/service-image.png" alt="Service" class="solution-img">
+          <a href="solutions.html" class="btn btn-light solution-btn">SOLUTIONS</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container why">
+        <div class="why-title-block">
+          <h2 class="section-title">why choose<br> teraObjects</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-card">
+            <img src="assets/rocket-icon.png" alt="Innovation">
+            <p>innovation driven</p>
+          </div>
+          <div class="why-card">
+            <img src="assets/resize-icon.png" alt="Scalable">
+            <p>scalable solutions</p>
+          </div>
+          <div class="why-card">
+            <img src="assets/security-icon.png" alt="Secure">
+            <p>secure infrastructure</p>
+          </div>
+          <div class="why-card">
+            <img src="assets/24-7 (1).png" alt="Support">
+            <p>24/7 support</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about">
+      <div class="container about-grid">
+        <div>
+          <h2 class="section-title">about us</h2>
+          <ul class="about-list">
+            <li>we are technology-driven specializing in innovative solutions targeting the manufacturing industry.</li>
+            <li>we have developed ai driven next gen apps for field service and plant maintenance.</li>
+            <li>our goal is to streamline business processes and digital enablement of people to enhance operational efficiency.</li>
+          </ul>
+        </div>
+        <div class="about-img-wrap">
+          <img src="assets/contact-image.png" alt="Team" class="about-img">
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-row">
+        <div class="cta-text">ready to transform the way your operations perform?</div>
+        <a class="btn btn-primary" href="demo.html">SCHEDULE A DEMO</a>
+      </div>
+    </section>
+
+    <footer id="contact" class="footer">
+      <div class="container footer-grid">
+        <div>
+          <img src="assets/froid-logo.png" alt="Froid" class="footer-logo">
+          <p class="footer-address">Nilampathinjamugal Rajagiri<br>Valley Rd, Kakkanad, Kerala 682039</p>
+          <div class="footer-contact">
+            <p><strong>Email</strong> sales@teraobjects.com</p>
+            <p><strong>Phone</strong> (+91)-</p>
+          </div>
+          <div class="social-row">
+            <img src="assets/linkedin-icon.png" alt="LinkedIn">
+            <img src="assets/social-icon.png" alt="Social">
+            <img src="assets/youtube-icon.png" alt="YouTube">
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-list">
+            <li>Field Service</li>
+            <li>Facility Maintenance</li>
+          </ul>
+        </div>
+        <div class="footer-badges">
+          <img src="assets/google-play.png" alt="Google Play">
+          <img src="assets/app-store.png" alt="App Store">
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

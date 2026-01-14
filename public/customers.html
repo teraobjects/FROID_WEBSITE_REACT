@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Froid | Customers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="container nav">
+        <img src="assets/froid-logo-large.png" alt="Froid logo" class="logo">
+        <nav class="nav-links">
+          <a href="index.html#home">HOME</a>
+          <a href="index.html#about">ABOUT</a>
+          <a href="solutions.html">SOLUTIONS</a>
+          <a href="customers.html" class="active">CUSTOMERS</a>
+        </nav>
+        <a class="btn btn-light" href="index.html#contact">CONTACT US</a>
+      </div>
+    </header>
+
+    <!-- Customers Hero Section -->
+    <main>
+      <section class="customers-hero">
+        <div class="container customers-hero-content">
+          <h1 class="customers-hero-title">trusted by businesses<br>around the world</h1>
+          <div class="customers-hero-map">
+            <img src="assets/map-against-white-background 1.png" alt="World Map" class="world-map-image">
+            <!-- Map Pins -->
+            <div class="map-pin pin-1" data-location="KERALA"></div>
+            <div class="map-pin pin-2" data-location="Saudi Arabia"></div>
+            <div class="map-pin pin-3" data-location="Nepal"></div>
+            <div class="map-pin pin-4" data-location="Singapore"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats">
+        <div class="container stats-grid">
+          <div class="stat">
+            <div class="stat-value counter" data-target="5">0</div>
+            <div class="stat-label">clients</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value counter" data-target="80">0</div>
+            <div class="stat-label">no of machines</div>
+          </div>
+          <div class="stat">
+            <div class="stat-value counter" data-target="1000">0</div>
+            <div class="stat-label">users</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA strip -->
+      <section class="cta">
+        <div class="container cta-row">
+          <div class="cta-text">Ready to transform the way your operations perform?</div>
+          <a class="btn btn-primary" href="demo.html">SCHEDULE A DEMO</a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact" class="footer">
+      <div class="container footer-grid">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <div class="footer-logo-wrapper">
+            <div class="footer-logo-icon"></div>
+            <span class="footer-logo-text">TeraObjects</span>
+          </div>
+          <p class="footer-address">
+            Nilampathinjamugal Rajagiri Valley Rd, Kakkanad, Kerala 682039
+          </p>
+          <div class="footer-contact">
+            <p><strong>Contact Sales</strong> sales@teraobjects.com</p>
+            <p><strong>Phone</strong> (+91) 9656 589 034</p>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <p class="footer-address">
+            57 Genting Lane, #04-00 Gani Building, Singapore 349564
+          </p>
+          <div class="footer-contact">
+            <p><strong>Email</strong> sales@oredicksolutions.com.sg</p>
+            <p><strong>Phone</strong> (+65) 9016 5538</p>
+          </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <ul class="footer-list">
+            <li>Facility Maintenance</li>
+            <li>Field Service</li>
+          </ul>
+
+          <div class="social-row">
+            <a href="https://www.linkedin.com/company/teraobjects" target="_blank">
+              <img src="assets/linkedin-icon.png">
+            </a>
+            <a href="https://www.instagram.com/TerarobotsIndia" target="_blank">
+              <img src="assets/social-icon.png">
+            </a>
+            <a href="https://www.youtube.com/@TerarobotsIndia" target="_blank">
+              <img src="assets/youtube-icon.png">
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 4 (Badges + Phone) -->
+        <div class="footer-col footer-col-badges">
+          <div class="footer-badges">
+            <img src="assets/app-store.png">
+            <img src="assets/google-play.png">
+          </div>
+
+          <div class="footer-illustration">
+            <img src="assets/contact-image.png">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const counters = document.querySelectorAll(".counter");
+      counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        let current = 0;
+        const speed = 100;
+        const updateCounter = () => {
+          const increment = target / speed;
+          if (current < target) {
+            current += increment;
+            counter.innerText = Math.ceil(current);
+            setTimeout(updateCounter, 20);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        updateCounter();
+      });
+    });
+  </script>
+</body>
+</html>
+
