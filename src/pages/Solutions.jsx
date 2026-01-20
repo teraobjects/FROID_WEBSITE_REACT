@@ -14,46 +14,51 @@ export default function Solutions() {
     <>
       <Header />
     <div className="page">
-      {/* ================= HERO ================= */}
-      <section className="solutions-hero">
-        <div className="solutions-hero-inner container">
+   {/* ================= HERO ================= */}
+<section className="solutions-hero">
+  
+  {/* FULL WIDTH IMAGE */}
+  <div className="solutions-hero-image">
+    <img src="/assets/solutions cover .jpg" alt="AC Technician" />
+  </div>
 
-          <div className="solutions-hero-image">
-            <img src="/assets/solutions cover .jpg" alt="AC Technician" />
-          </div>
+  {/* CONTENT OVERLAY */}
+  <div className="solutions-hero-content-wrapper">
+    <div className="solutions-hero-content container">
 
-          <div className="solutions-hero-content">
-            <div className="solutions-hero-logo">
-              <img
-                src="/assets/froid-logo.png"
-                className="froid-logo"
-                alt="Froid"
-              />
-              <span className="snowflake">❄</span>
-            </div>
+      <div className="solutions-hero-logo">
+        <img
+          src="/assets/froid-logo.png"
+          className="froid-logo"
+          alt="Froid"
+        />
+        <span className="snowflake">❄</span>
+      </div>
 
-            <p className="solutions-hero-tagline">
-              AI Enabled Smart AC Care
-            </p>
+      <p className="solutions-hero-tagline">
+        AI Enabled Smart AC Care
+      </p>
 
-            <ul className="solutions-hero-list">
-              <li>1000s of tons of air conditioning across many customers</li>
-              <li>
-                Run your entire service organization from <b>One App</b>
-              </li>
-            </ul>
+      <ul className="solutions-hero-list">
+        <li>1000s of tons of air conditioning across many customers</li>
+        <li>
+          Run your entire service organization from <b>One App</b>
+        </li>
+      </ul>
 
-            <a
-              href="https://youtu.be/9ZVLgxYIzEg?si=KI7Wr4nXBjOsVUHM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="solutions-hero-cta"
-            >
-              <span className="play-icon">▶</span> VIDEO BROCHURE
-            </a>
-          </div>
-        </div>
-      </section>
+      <a
+        href="https://youtu.be/9ZVLgxYIzEg?si=KI7Wr4nXBjOsVUHM"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="solutions-hero-cta"
+      >
+        <span className="play-icon">▶</span> VIDEO BROCHURE
+      </a>
+
+    </div>
+  </div>
+</section>
+
 
       {/* ================= CHALLENGES ================= */}
       <section className="solutions-section light-bg">
