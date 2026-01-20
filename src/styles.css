@@ -1,3 +1,55 @@
+/* ===== PAGE LOAD BASE ===== */
+.hero-content,
+.hero-woman,
+.hero-float-icons img {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Woman scale effect */
+.hero-woman {
+  transform: scale(2.9);
+}
+.page-loaded .hero-content {
+  animation: fadeUp 1.8s ease-out forwards;
+}
+
+.page-loaded .hero-woman {
+  animation: scaleIn 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.page-loaded .hero-float-icons img {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+/* stagger icons */
+.page-loaded .hero-float-icons img.one { animation-delay: 0.6s; }
+.page-loaded .hero-float-icons img.two { animation-delay: 0.8s; }
+.page-loaded .hero-float-icons img.three { animation-delay: 1s; }
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 html, body {
   width:100%;
   max-width:100%;
@@ -20,14 +72,14 @@ body {
   color: #4b4b4b;
   background: #ffffff;
 }
-/* 
+
 body.solutions-page {
   background-image: url('assets/new-year-background.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-} */
+}
 
 img {
   max-width: 100%;
@@ -138,20 +190,23 @@ img {
 }
 
 .solutions-hero {
-  width: 100%;
-  height: 100vh; /* FULL SCREEN */
+  position: relative;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
 
 .hero-woman{
   position:absolute;
-  bottom:-140px;
-  left:50%;
+  bottom:-149px;
+  left:39%;
+  right:auto;
   transform:translateX(-50%);
   max-width:520px;
   width:100%;
   z-index:20;
+  margin:0 auto;
 }
 .hero-woman img{
   width:100%;
@@ -366,7 +421,7 @@ img {
   font-weight: 700;
   font-size: 2.1rem;
   color: #295bce;
-  text-align: center;
+  text-align: left;
   margin-bottom: 20px;
   position: relative;
 }
@@ -374,7 +429,7 @@ img {
 .section-title::after {
   content: "";
   display: block;
-  margin: 20px auto 0;
+  margin: 20px 0 0 0;
   width: 200px;
   height: 5px;
   border-radius: 999px;
@@ -839,7 +894,7 @@ img {
 
 .solutions-hero {
   width: 100%;
-  height: 100vh; /* FULL SCREEN */
+  height: 800px; /* FULL SCREEN */
   overflow: hidden;
 }
 
@@ -848,41 +903,53 @@ img {
   grid-template-columns: 1fr 1fr; /* 50 / 50 */
   height: 100%;
   max-width: 100%;
-  padding: 0;
+  padding: 40px 20px;
 }
 
-/* LEFT IMAGE */
+/* LEFT IMAGE FULL WIDTH */
 .solutions-hero-image {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
+
 
 .solutions-hero-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 🔥 IMPORTANT */
+  object-fit: cover;
 }
 
-/* RIGHT CONTENT */
+/* RIGHT CONTENT PANEL */
+.solutions-hero-content-wrapper {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* CONTENT AREA */
 .solutions-hero-content {
-  background: linear-gradient(180deg, #d7d7d7, #bdbdbd);
+  width: 50%;
+  min-height: 10%;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* 🔥 VERTICAL CENTER */
-  padding: 80px;
-  color: #ffffff;
+  justify-content: left;
+  color: white;
 }
 
 /* LOGO */
 .solutions-hero-logo {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: auto;
+  gap: 10%;
   margin-bottom: 20px;
 }
 
 .froid-logo {
   width: 220px;
+  margin-left: 500px;
 }
 
 .snowflake {
@@ -895,26 +962,28 @@ img {
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 28px;
+  margin-left: 500px;
 }
 
 /* LIST */
 .solutions-hero-list {
   list-style: none;
   padding: 0;
+  margin-left: 500px;
   margin-bottom: 40px;
 }
 
 .solutions-hero-list li {
   display: flex;
   gap: 12px;
-  font-size: 16px;
-  margin-bottom: 16px;
+  font-size: 20px;
+  margin-bottom: 20px;
   line-height: 1.5;
 }
 
 .solutions-hero-list li::before {
   content: "↗";
-  font-size: 18px;
+  font-size: 25px;
 }
 
 /* CTA BUTTON */
@@ -927,6 +996,7 @@ img {
   border-radius: 40px;
   background: #4a8cff;
   color: #fff;
+  margin-left: 500px;
   font-weight: 600;
   text-decoration: none;
 }
