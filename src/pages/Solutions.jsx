@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "../components/Header";      
 import Footer from "../components/Footer";
+import CTA from "../components/CTA";
 
 export default function Solutions() {
 
@@ -76,22 +77,27 @@ export default function Solutions() {
           </div>
 
           <div className="solutions-challenges-row">
-            <div className="solutions-challenge">
-              <span className="highlight-text">Machine Breakdowns</span>
-            </div>
+  <div className="solutions-challenge">
+    <img src="/assets/breakdown2.png" alt="" />
+    <span className="highlight-text">Machine Breakdowns</span>
+  </div>
 
-            <div className="solutions-challenge">
-              <span className="highlight-text">Consistent records</span>
-            </div>
+  <div className="solutions-challenge">
+    <img src="/assets/records.png" alt="" />
+    <span className="highlight-text">Consistent records</span>
+  </div>
 
-            <div className="solutions-challenge">
-              <span className="highlight-text">Machine Calibration</span>
-            </div>
+  <div className="solutions-challenge">
+    <img src="/assets/machinecalibration.png" alt="" />
+    <span className="highlight-text">Machine Calibration</span>
+  </div>
 
-            <div className="solutions-challenge">
-              <span className="highlight-text">Spare Parts Management</span>
-            </div>
-          </div>
+  <div className="solutions-challenge">
+    <img src="/assets/setting1.png" alt="" />
+    <span className="highlight-text">Spare Parts Management</span>
+  </div>
+</div>
+
 
           <div className="solutions-note-wrapper">
             <p className="solutions-note">
@@ -159,8 +165,92 @@ export default function Solutions() {
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
+      {/* ================= SERVICE TICKET MANAGEMENT ================= */}
+      <section className="solutions-section blue-bg solutions-tickets-section">
+        <div className="container solutions-tickets">
+          <h3 className="solutions-tickets-title">SERVICE TICKET MANAGEMENT</h3>
+          <p className="solutions-tickets-sub">Different type of Tickets</p>
+          <div className="solutions-tickets-main">
+            <div className="solutions-tickets-phone-wrapper">
+              <div className="solutions-tickets-phone-container">
+                <img
+                  src="/assets/mob scrn.png"
+                  alt="Service tickets app"
+                  className="solutions-tickets-phone"
+                />
+                <div className="solutions-tickets-tags">
+                  <span className="ticket-tag tag-top-left">Calibration</span>
+                  <span className="ticket-tag tag-top-right">Inspections</span>
+                  <span className="ticket-tag tag-bottom-left">Equipment Support</span>
+                  <span className="ticket-tag tag-middle-right">Spares Usage Tracking</span>
+                  <span className="ticket-tag tag-bottom-left-overlap">Alert & Notifications</span>
+                  <span className="ticket-tag tag-bottom-right-overlap">Preventive Maintenance</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= STANDARD FEATURES ================= */}
+      <section className="solutions-section">
+        <div className="container solutions-standard">
+          <div className="solutions-standard-header">
+            <img
+              src="/assets/froid-logo-large.png"
+              alt="Froid logo"
+              className="solutions-standard-logo"
+            />
+          </div>
+          <div className="solutions-standard-content">
+            <div className="solutions-standard-phones">
+              <img src="/assets/face ui.png" className="phone-back" alt="Phone back" />
+              <img src="/assets/side_view.png" className="phone-front" alt="Phone front" />
+            </div>
+            <div className="solutions-standard-list">
+              <h3>Standard Features</h3>
+              <ul>
+                <li>Work orders</li>
+                <li>Service Hours</li>
+                <li>Increase machine Uptime</li>
+                <li>Service And Spares Quotes</li>
+                <li>Up to date customer information</li>
+                <li>Boost equipment dependability</li>
+                <li>Signature capture</li>
+                <li>User friendly & responsive interface</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================= SEAMLESS EXPERIENCE ================= */}
+      <section className="solutions-section">
+        <div className="container solutions-seamless">
+          <div className="solutions-seamless-card">
+            <p>Seamless Experience in</p>
+
+            <div className="solutions-seamless-icons">
+              <div className="seamless-icon-item">
+                <img src="/assets/web.png" alt="Web" />
+                <span>Web</span>
+              </div>
+
+              <div className="seamless-icon-item">
+                <img src="/assets/apple-logo.png" alt="iOS" />
+                <span>iOS</span>
+              </div>
+
+              <div className="seamless-icon-item">
+                <img src="/assets/android.png" alt="Android" />
+                <span>Android</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+    <CTA />
     <Footer />
     </>
   );

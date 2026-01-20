@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "../components/Header";      
 import Footer from "../components/Footer";
+import CTA from "../components/CTA";
 
 export default function Home() {
 
@@ -42,7 +43,7 @@ export default function Home() {
             one-stop app for <br />
             <span className="highlight">hassle-free service</span>
             </h1>
-            {/* <p className="subtitle">AI Powered Field Service Solution</p> */}
+            {/* <p className="subtitle">ai enabled service solution</p> */}
         </div>
         </div>
 
@@ -248,6 +249,7 @@ export default function Home() {
         </div>
     </section> 
     </div>
+    <CTA />
     <Footer />
     </>
   );
