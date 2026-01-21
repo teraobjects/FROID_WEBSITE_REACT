@@ -125,7 +125,7 @@ export default function Solutions() {
 
       {/* ================= INTRO ================= */}
       <section className="solutions-intro">
-        <div className="container solutions-intro-inner">
+        {/* <div className="container solutions-intro-inner"> */}
           <img
             src="/assets/intro froid.png"
             alt="Engineer with tablet"
@@ -144,31 +144,36 @@ export default function Solutions() {
               Field Service App
             </h2>
           </div>
-        </div>
+        {/* </div> */}
       </section>
 
-      {/* ================= NEXT GEN FEATURES ================= */}
-      <section className="solutions-section">
-        <div className="container solutions-nextgen">
-          <div className="solutions-nextgen-card">
-            <img
-              src="/assets/Group 8.png"
-              className="solutions-nextgen-phone phone-float"
-              alt="App UI"
-            />
+{/* ================= NEXT GEN FEATURES ================= */}
+<section className="solutions-section">
+  <div className="container solutions-nextgen">
+    <div className="solutions-nextgen-card">
 
-            <div className="solutions-nextgen-content">
-              <h3>NEXT GEN FEATURES</h3>
-              <ul>
-                <li>Highly Customizable CMMS</li>
-                <li>Detailed Service Tickets Reports</li>
-                <li>Scan QR Codes to Create Tickets</li>
-                <li>Auto Ticket Creation</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Phone wrapper */}
+      <div className="solutions-nextgen-phone-wrap">
+        <img
+          src="/assets/Group 8.png"
+          className="solutions-nextgen-phone phone-float"
+          alt="App UI"
+        />
+      </div>
+
+      <div className="solutions-nextgen-content">
+        <h1>NEXT GEN FEATURES</h1>
+        <ul className="features-grid">
+          <li>Highly Customizable CMMS</li>
+          <li>Detailed Service Tickets Reports</li>
+          <li>Scan QR Codes to Create Tickets</li>
+          <li>Auto Ticket Creation</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
 
       {/* ================= SERVICE TICKET MANAGEMENT ================= */}
       <section className="solutions-section blue-bg solutions-tickets-section">
@@ -247,7 +252,7 @@ export default function Solutions() {
               </div>
 
               <div className="seamless-icon-item">
-                <img src="/assets/android.png" alt="Android" />
+                <img src="/assets/android .png" alt="Android" />
                 <span>Android</span>
               </div>
             </div>

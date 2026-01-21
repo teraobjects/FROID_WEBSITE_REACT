@@ -63,15 +63,15 @@ export default function Customers() {
         <section className="stats">
           <div className="container stats-grid">
             <div className="stat">
-              <div className="stat-value counter" data-target="5">0</div>
+              <div className="stat-value counter" data-target="7">0</div>
               <div className="stat-label">clients</div>
             </div>
             <div className="stat">
-              <div className="stat-value counter" data-target="80">0</div>
+              <div className="stat-value counter" data-target="2772">0</div>
               <div className="stat-label">no of machines</div>
             </div>
             <div className="stat">
-              <div className="stat-value counter" data-target="1000">0</div>
+              <div className="stat-value counter" data-target="151">0</div>
               <div className="stat-label">users</div>
             </div>
           </div>
