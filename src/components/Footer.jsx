@@ -6,8 +6,8 @@ export default function Footer() {
 
           <div className="footer-col">
             <div className="footer-logo-wrapper">
-              <div className="footer-logo-icon"></div>
-              <span className="footer-logo-text">TeraObjects</span>
+              {/* <div className="footer-logo-icon"></div> */}
+              <img src="/assets/logo.png" alt="Froid Logo" className="footer-logo-img" />
             </div>
             <p className="footer-address">
               Nilampathinjamugal Rajagiri Valley Rd, Kakkanad, Kerala 682039

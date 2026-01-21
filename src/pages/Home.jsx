@@ -177,7 +177,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="about-img-wrap">
+            <div className="about-img-wra">
               <img src="assets/contact-image.png" alt="Team" className="about-img" />
             </div>
           </div>
