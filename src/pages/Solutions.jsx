@@ -1,58 +1,90 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";      
 import Footer from "../components/Footer";
+import CTA from "../components/CTA";
 
 export default function Solutions() {
+  const noteWrapperRef = useRef(null);
+  const [noteImageTransform, setNoteImageTransform] = useState({ x: 0, y: 0 });
 
-  // (No JS logic needed here yet)
+  // Scroll-linked movement: scroll down → image moves down + left; scroll up → right
   useEffect(() => {
-    // Reserved for future animations if needed
+    const noteSection = noteWrapperRef.current;
+    if (!noteSection) return;
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const rect = noteSection.getBoundingClientRect();
+      const sectionTop = rect.top + scrollY;
+      const viewHeight = window.innerHeight;
+
+      // When section is in view: map scroll progress to image movement
+      const start = sectionTop - viewHeight * 0.4;
+      const end = sectionTop + 350;
+      const progress = Math.max(0, Math.min(1, (scrollY - start) / (end - start)));
+
+      // Scroll down (more progress) → image moves left (-x) and down (+y); scroll up → right and up
+      const moveAmount = 45;
+      const x = -(progress - 0.5) * moveAmount * 2; // scroll down → negative x (left); scroll up → positive (right)
+      const y = (progress - 0.5) * moveAmount;      // scroll down → positive y (down); scroll up → negative (up)
+
+      setNoteImageTransform({ x, y });
+    };
+
+    handleScroll(); // set initial
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <>
       <Header />
     <div className="page">
-      {/* ================= HERO ================= */}
-      <section className="solutions-hero">
-        <div className="solutions-hero-inner container">
+   {/* ================= HERO ================= */}
+<section className="solutions-hero">
+  
+  {/* FULL WIDTH IMAGE */}
+  <div className="solutions-hero-image">
+    <img src="/assets/solutions cover .jpg" alt="AC Technician" />
+  </div>
 
-          <div className="solutions-hero-image">
-            <img src="/assets/solutions cover .jpg" alt="AC Technician" />
-          </div>
+  {/* CONTENT OVERLAY */}
+  <div className="solutions-hero-content-wrapper">
+    <div className="solutions-hero-content container">
 
-          <div className="solutions-hero-content">
-            <div className="solutions-hero-logo">
-              <img
-                src="/assets/froid-logo.png"
-                className="froid-logo"
-                alt="Froid"
-              />
-              <span className="snowflake">❄</span>
-            </div>
+      <div className="solutions-hero-logo">
+        <img
+          src="/assets/froid-logo.png"
+          className="froid-logo"
+          alt="Froid"
+        />
+        <span className="snowflake">❄</span>
+      </div>
 
-            <p className="solutions-hero-tagline">
-              AI Enabled Smart AC Care
-            </p>
+      <p className="solutions-hero-tagline">
+        AI Enabled Smart AC Care
+      </p>
 
-            <ul className="solutions-hero-list">
-              <li>1000s of tons of air conditioning across many customers</li>
-              <li>
-                Run your entire service organization from <b>One App</b>
-              </li>
-            </ul>
+      <ul className="solutions-hero-list">
+        <li>1000s of tons of air conditioning across many customers</li>
+        <li>
+          Run your entire service organization from <b>One App</b>
+        </li>
+      </ul>
 
-            <a
-              href="https://youtu.be/9ZVLgxYIzEg?si=KI7Wr4nXBjOsVUHM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="solutions-hero-cta"
-            >
-              <span className="play-icon">▶</span> VIDEO BROCHURE
-            </a>
-          </div>
-        </div>
-      </section>
+      <a
+        href="https://youtu.be/9ZVLgxYIzEg?si=KI7Wr4nXBjOsVUHM"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="solutions-hero-cta"
+      >
+        <span className="play-icon">▶</span> VIDEO BROCHURE
+      </a>
+
+    </div>
+  </div>
+</section>
+
 
       {/* ================= CHALLENGES ================= */}
       <section className="solutions-section light-bg">
@@ -76,24 +108,29 @@ export default function Solutions() {
           </div>
 
           <div className="solutions-challenges-row">
-            <div className="solutions-challenge">
-              <span className="highlight-text">Machine Breakdowns</span>
-            </div>
+  <div className="solutions-challenge">
+    <img src="/assets/breakdown2.png" alt="" />
+    <span className="highlight-text">Machine Breakdowns</span>
+  </div>
 
-            <div className="solutions-challenge">
-              <span className="highlight-text">Consistent records</span>
-            </div>
+  <div className="solutions-challenge">
+    <img src="/assets/records.png" alt="" />
+    <span className="highlight-text">Consistent records</span>
+  </div>
 
-            <div className="solutions-challenge">
-              <span className="highlight-text">Machine Calibration</span>
-            </div>
+  <div className="solutions-challenge">
+    <img src="/assets/machinecalibration.png" alt="" />
+    <span className="highlight-text">Machine Calibration</span>
+  </div>
 
-            <div className="solutions-challenge">
-              <span className="highlight-text">Spare Parts Management</span>
-            </div>
-          </div>
+  <div className="solutions-challenge">
+    <img src="/assets/setting1.png" alt="" />
+    <span className="highlight-text">Spare Parts Management</span>
+  </div>
+</div>
 
-          <div className="solutions-note-wrapper">
+
+          <div className="solutions-note-wrapper" ref={noteWrapperRef}>
             <p className="solutions-note">
               These challenges cannot be effectively solved using{" "}
               <span className="note-highlight">WhatsApp groups</span>,{" "}
@@ -101,7 +138,13 @@ export default function Solutions() {
               <span className="note-highlight">paper reports</span>.
             </p>
 
-            <div className="solutions-note-image-wrapper">
+            <div
+              className="solutions-note-image-wrapper"
+              style={{
+                transform: `translate(${noteImageTransform.x}px, ${noteImageTransform.y}px)`,
+                transition: "transform 0.1s ease-out",
+              }}
+            >
               <img
                 src="/assets/man holding paper.png"
                 alt="Technician with papers"
@@ -114,7 +157,7 @@ export default function Solutions() {
 
       {/* ================= INTRO ================= */}
       <section className="solutions-intro">
-        <div className="container solutions-intro-inner">
+        {/* <div className="container solutions-intro-inner"> */}
           <img
             src="/assets/intro froid.png"
             alt="Engineer with tablet"
@@ -133,34 +176,123 @@ export default function Solutions() {
               Field Service App
             </h2>
           </div>
+        {/* </div> */}
+      </section>
+
+{/* ================= NEXT GEN FEATURES ================= */}
+<section className="solutions-section">
+  <div className="container solutions-nextgen">
+    <div className="solutions-nextgen-card">
+
+      {/* Phone wrapper */}
+      <div className="solutions-nextgen-phone-wrap">
+        <img
+          src="/assets/Group 8.png"
+          className="solutions-nextgen-phone phone-float"
+          alt="App UI"
+        />
+      </div>
+
+      <div className="solutions-nextgen-content">
+        <h1>NEXT GEN FEATURES</h1>
+        <ul className="features-grid">
+          <li>Highly Customizable CMMS</li>
+          <li>Detailed Service Tickets Reports</li>
+          <li>Scan QR Codes to Create Tickets</li>
+          <li>Auto Ticket Creation</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      {/* ================= SERVICE TICKET MANAGEMENT ================= */}
+      <section className="solutions-section blue-bg solutions-tickets-section">
+        <div className="container solutions-tickets">
+          <h3 className="solutions-tickets-title">SERVICE TICKET MANAGEMENT</h3>
+          <p className="solutions-tickets-sub">Different type of Tickets</p>
+          <div className="solutions-tickets-main">
+            <div className="solutions-tickets-phone-wrapper">
+              <div className="solutions-tickets-phone-container">
+                <img
+                  src="/assets/mob scrn.png"
+                  alt="Service tickets app"
+                  className="solutions-tickets-phone"
+                />
+                <div className="solutions-tickets-tags">
+                  <span className="ticket-tag tag-top-left">Calibration</span>
+                  <span className="ticket-tag tag-top-right">Inspections</span>
+                  <span className="ticket-tag tag-bottom-left">Equipment Support</span>
+                  <span className="ticket-tag tag-middle-right">Spares Usage Tracking</span>
+                  <span className="ticket-tag tag-bottom-left-overlap">Alert & Notifications</span>
+                  <span className="ticket-tag tag-bottom-right-overlap">Preventive Maintenance</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ================= NEXT GEN FEATURES ================= */}
+      {/* ================= STANDARD FEATURES ================= */}
       <section className="solutions-section">
-        <div className="container solutions-nextgen">
-          <div className="solutions-nextgen-card">
+        <div className="container solutions-standard">
+          <div className="solutions-standard-header">
             <img
-              src="/assets/Group 8.png"
-              className="solutions-nextgen-phone phone-float"
-              alt="App UI"
+              src="/assets/froid-logo-large.png"
+              alt="Froid logo"
+              className="solutions-standard-logo"
             />
-
-            <div className="solutions-nextgen-content">
-              <h3>NEXT GEN FEATURES</h3>
+          </div>
+          <div className="solutions-standard-content">
+            <div className="solutions-standard-phones">
+              <img src="/assets/face ui.png" className="phone-back" alt="Phone back" />
+              <img src="/assets/side_view.png" className="phone-front" alt="Phone front" />
+            </div>
+            <div className="solutions-standard-list">
+              <h3>Standard Features</h3>
               <ul>
-                <li>Highly Customizable CMMS</li>
-                <li>Detailed Service Tickets Reports</li>
-                <li>Scan QR Codes to Create Tickets</li>
-                <li>Auto Ticket Creation</li>
+                <li>Work orders</li>
+                <li>Service Hours</li>
+                <li>Increase machine Uptime</li>
+                <li>Service And Spares Quotes</li>
+                <li>Up to date customer information</li>
+                <li>Boost equipment dependability</li>
+                <li>Signature capture</li>
+                <li>User friendly & responsive interface</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ================= FOOTER ================= */}
+      {/* ================= SEAMLESS EXPERIENCE ================= */}
+      <section className="solutions-section">
+        <div className="container solutions-seamless">
+          <div className="solutions-seamless-card">
+            <p>Seamless Experience in</p>
+
+            <div className="solutions-seamless-icons">
+              <div className="seamless-icon-item">
+                <img src="/assets/web.png" alt="Web" />
+                <span>Web</span>
+              </div>
+
+              <div className="seamless-icon-item">
+                <img src="/assets/apple-logo.png" alt="iOS" />
+                <span>iOS</span>
+              </div>
+
+              <div className="seamless-icon-item">
+                <img src="/assets/android .png" alt="Android" />
+                <span>Android</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+    <CTA />
     <Footer />
     </>
   );

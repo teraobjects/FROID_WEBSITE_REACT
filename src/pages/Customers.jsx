@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "../components/Header";      
 import Footer from "../components/Footer";
+import CTA from "../components/CTA";
 
 export default function Customers() {
 
@@ -50,7 +51,7 @@ export default function Customers() {
                 className="world-map-image"
               />
 
-              <div className="map-pin pin-1" data-location="KERALA"></div>
+              <div className="map-pin pin-1" data-location="India"></div>
               <div className="map-pin pin-2" data-location="Saudi Arabia"></div>
               <div className="map-pin pin-3" data-location="Nepal"></div>
               <div className="map-pin pin-4" data-location="Singapore"></div>
@@ -62,15 +63,15 @@ export default function Customers() {
         <section className="stats">
           <div className="container stats-grid">
             <div className="stat">
-              <div className="stat-value counter" data-target="5">0</div>
+              <div className="stat-value counter" data-target="7">0</div>
               <div className="stat-label">clients</div>
             </div>
             <div className="stat">
-              <div className="stat-value counter" data-target="80">0</div>
+              <div className="stat-value counter" data-target="2772">0</div>
               <div className="stat-label">no of machines</div>
             </div>
             <div className="stat">
-              <div className="stat-value counter" data-target="1000">0</div>
+              <div className="stat-value counter" data-target="151">0</div>
               <div className="stat-label">users</div>
             </div>
           </div>
@@ -81,6 +82,7 @@ export default function Customers() {
       </main>
 
       {/* ===== FOOTER ===== */}
+      <CTA />
       <Footer />
     </div>
   );

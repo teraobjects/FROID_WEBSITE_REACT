@@ -1,20 +1,28 @@
 export default function Footer() {
   return (
     <>
+      {/* CTA SECTION */}
+      <section className="cta-section">
+        <div className="cta-inner container">
+          <h3>Ready to transform the way your operations perform?</h3>
+          <a href="/demo" className="cta-btn">SCHEDULE A DEMO</a>
+        </div>
+      </section>
+
       <footer id="contact" className="footer">
         <div className="container footer-grid">
 
           <div className="footer-col">
             <div className="footer-logo-wrapper">
-              {/* <div className="footer-logo-icon"></div> */}
-              <img src="/assets/logo.png" alt="Froid Logo" className="footer-logo-img" />
+              <div className="footer-logo-icon"></div>
+              <span className="footer-logo-text">TeraObjects</span>
             </div>
             <p className="footer-address">
               Nilampathinjamugal Rajagiri Valley Rd, Kakkanad, Kerala 682039
             </p>
             <div className="footer-contact">
               <p><strong>Contact Sales</strong> sales@teraobjects.com</p>
-              <p><strong>Phone</strong> (+91) 8089 637 009</p>
+              <p><strong>Phone</strong> (+91)8089 637 009</p>
             </div>
           </div>
 
@@ -23,8 +31,8 @@ export default function Footer() {
               57 Genting Lane, #04-00 Gani Building, Singapore 349564
             </p>
             <div className="footer-contact">
-              <p><strong>Email</strong> sales@oneclicksolutions.com.sg</p>
-              <p><strong>Phone</strong>  +65 901 65 538</p>
+              <p><strong>Email</strong> sales@oredicksolutions.com.sg</p>
+              <p><strong>Phone</strong> (+65) 9016 5538</p>
             </div>
           </div>
 
@@ -36,10 +44,10 @@ export default function Footer() {
             </ul>
 
             <div className="social-row">
-              <a href="https://www.linkedin.com/company/teraobjects-india/?viewAsMember=true" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/company/teraobjects" target="_blank" rel="noreferrer">
                 <img src="/assets/linkedin-icon.png" />
               </a>
-              <a href="https://www.instagram.com/terarobots_india?igsh=MWtsOXg3aGd4aDNpZQ%3D%3D&utm_source=qr" target="_blank" rel="noreferrer">
+              <a href="https://www.instagram.com/TerarobotsIndia" target="_blank" rel="noreferrer">
                 <img src="/assets/social-icon.png" />
               </a>
               <a href="https://www.youtube.com/@TerarobotsIndia" target="_blank" rel="noreferrer">
@@ -50,12 +58,8 @@ export default function Footer() {
 
           <div className="footer-col footer-col-badges">
             <div className="footer-badges">
-              <a href="https://apps.apple.com/in/app/froid/id6748016484" target="_blank" rel="noreferrer">
-                <img src="/assets/app-store.png" />
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.teraobjects.ind.froid" target="_blank" rel="noreferrer">
-                <img src="/assets/google-play.png" />
-              </a>
+              <img src="/assets/app-store.png" />
+              <img src="/assets/google-play.png" />
             </div>
 
             <div className="footer-illustration">
