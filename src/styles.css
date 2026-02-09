@@ -1679,13 +1679,16 @@ img {
 .solutions-standard-header{
   display:flex;
   justify-content:center;
+  align-items:center;
   width:100%;
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 .solutions-standard-logo{
   max-width:450px;
   width:100%;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Two-column layout */
@@ -1693,32 +1696,38 @@ img {
   display:grid;
   grid-template-columns:1fr 1fr;
   align-items:center;
-  gap:0px;
+  justify-items: center;
+  gap: 80px;
   width:100%;
+  padding: 40px 0;
 }
 
 .solutions-standard-phones {
   position: relative;
-  width: 300px;
-  height: 100px;
+  width: 400px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .phone-back{
   position:absolute;
-  right: -100px;
-  top: -200px;
-  width:100%;
+  right: -50px;
+  top: -100px;
+  width: 100%;
   z-index:1;
 }
 
 .phone-front{
   position:absolute;
-  left:-50px;
-  bottom:-170px;
-  transform: rotate(-1deg) scale(1.40);
+  left: 0;
+  bottom: -80px;
+  transform: rotate(-1deg) scale(1.35);
   transform-origin: center;
   z-index:2;
   filter:drop-shadow(0 30px 40px rgba(0,0,0,0.4));
+  width: 100%;
 }
 
 
@@ -1729,6 +1738,10 @@ img {
 }
 
 /* Text styles */
+.solutions-standard-list{
+  width: 100%;
+}
+
 .solutions-standard-list h3{
   font-size:42px;
   color:#295bce;
@@ -1736,13 +1749,15 @@ img {
   font-weight:700;
   font-style:italic;
   letter-spacing:0.04em;
-  transform: translateX(-120px);
+  transform: none;
+  text-align: left;
 }
 
 .solutions-standard-list ul{
-  list-style:none;
-  padding-right: 5%;
-  transform: translateX(-125px);
+  list-style: none;
+  padding: 0;
+  transform: none;
+  text-align: left;
 }
 
 .solutions-standard-list li{
@@ -1752,12 +1767,13 @@ img {
   padding-left:40px;
   position:relative;
   line-height:1.4;
+  text-align: left;
 }
 
 .solutions-standard-list li::before{
   content:"•";
   position:absolute;
-  left: 15px;
+  left: 0;
   top:0;
   font-size:25px;
   color:#295bce;
@@ -2477,15 +2493,18 @@ img {
   /* NEXTGEN FEATURES */
   .solutions-nextgen-card {
     flex-direction: column;
+    overflow: hidden;
+    padding: 40px 0;
   }
 
   .solutions-nextgen-phone-wrap {
     order: 2;
-    margin-top: 1.5rem;
+    margin-top: -80px;
+    margin-bottom: 0;
   }
 
   .solutions-nextgen-phone {
-    max-width: 280px;
+    max-width: 320px;
   }
 
   .solutions-nextgen-content {
@@ -2510,7 +2529,7 @@ img {
 
   /* SERVICE TICKETS */
   .solutions-tickets {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
   }
 
   .solutions-tickets-title {
@@ -2572,30 +2591,93 @@ img {
   .tag-bottom-left-overlap { bottom: 5%; left: 5%; }
   .tag-bottom-right-overlap { bottom: 5%; right: 5%; }
 
+
   /* STANDARD FEATURES */
   .solutions-standard {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .solutions-standard-content {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    padding: 20px 0;
   }
 
   .solutions-standard-phones {
-    max-width: 100%;
+    position: relative;
+    width: 160px;
+    height: 220px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .phone-back {
+    position: absolute;
+    width: 100%;
+    right: auto;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    margin-bottom: 0;
+  }
+
+  .phone-front {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-1deg) scale(0.8);
+    z-index: 2;
+    width: 70%;
+  }
+
+  .solutions-standard-list {
+    width: 100%;
+    text-align: left;
+    padding: 0 20px;
   }
 
   .solutions-standard-list h3 {
-    font-size: 1.4rem;
-    text-align: center;
+    font-size: 1.5rem;
+    text-align: left;
+    transform: none;
+    margin-bottom: 20px;
+    color: #295bce;
   }
 
   .solutions-standard-list ul {
+    list-style: none;
     columns: 1;
+    transform: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .solutions-standard-list li {
+    font-size: 0.95rem;
+    padding-left: 25px;
+    text-align: left;
+    color: #1f4fd8;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .solutions-standard-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    color: #295bce;
   }
 
   /* SEAMLESS EXPERIENCE */
@@ -2788,13 +2870,22 @@ img {
   }
 
   /* NEXTGEN FEATURES */
-  .solutions-nextgen-content h1 {
-    font-size: 1.2rem;
+  .solutions-nextgen-content h2 {
+    font-size: 2.0rem;
   }
 
+  /* MOBILE PHONE POSITION TWEAK */
+@media (max-width: 768px) {
+
   .solutions-nextgen-phone {
-    max-width: 200px;
+    position: relative;
+    top: -140px;   /* 👈 moves phone UP closer to Auto Ticket Creation */
+    margin: 0 auto;
+    display: block;
   }
+
+}
+
 
   .solutions-nextgen-content li {
     padding: 12px 15px 12px 40px;
@@ -2808,83 +2899,117 @@ img {
     left: 12px;
   }
 
-  /* SERVICE TICKETS */
-  .solutions-tickets {
-    padding: 1.5rem 0;
+  /* REDUCE BLUE PADDING – MOBILE */
+@media (max-width: 768px) {
+
+  .solutions-nextgen {
+    padding-top: 38px;   /* was too large */
+    padding-bottom: 24px;
   }
 
-  .solutions-tickets-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
-    line-height: 1.2;
-    letter-spacing: 0.01em;
-  }
+}
 
-  .solutions-tickets-sub {
-    font-size: 0.85rem;
-    margin-bottom: 0.8rem;
-    line-height: 1.2;
-  }
 
-  .solutions-tickets-main {
-    padding: 0.5rem 0;
-  }
+  
 
-  .solutions-tickets-phone-wrapper {
-    padding: 0.8rem 0;
-    max-width: 100%;
-  }
+/* SERVICE TICKETS - 480px: stacked layout (tags above phone, no overlap) */
+@media (max-width: 480px) {
+.solutions-tickets {
+  padding: 1.5rem 0;
+}
 
-  .solutions-tickets-phone-container {
-    position: relative;
-    width: 100%;
-    max-width: 250px;
-    margin: 0 auto;
-  }
+.solutions-tickets-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
 
+.solutions-tickets-sub {
+  font-size: 0.85rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.2;
+}
+
+.solutions-tickets-main {
+  padding: 0.5rem 0;
+}
+
+.solutions-tickets-phone-wrapper {
+  padding: 0.8rem 0;
+  max-width: 100%;
+}
+
+.solutions-tickets-phone-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.solutions-tickets-tags {
+  order: 1;
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 16px;
+  margin-top: 0;
+}
+
+.ticket-tag {
+  font-size: 0.6rem;
+  padding: 5px 8px;
+  border-radius: 8px;
+  position: static;
+  background: rgba(255,255,255,0.95);
+  color: #1f4fd8;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.solutions-tickets-phone {
+  order: 2;
+  width: auto;
+  max-width: 180px;
+  transform: none;
+  margin: 0;
+  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+}
+}
+
+/* STANDARD FEATURES */
+.solutions-standard-logo {
+  width: 150px;
+}
+
+.solutions-standard-list h3 {
+  font-size: 1.1rem;
+}
+
+.solutions-standard-list ul {
+  font-size: 0.85rem;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  /* FIX OVERLAP ISSUE */
   .solutions-tickets-phone {
-    max-width: 100%;
-    width: 100%;
-    transform: translateY(20px);
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
-    max-width: 210px;
+    transform: none;        /* remove visual push */
+    margin-top: 20px;       /* add real spacing */
   }
 
-  .solutions-tickets-tags {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 4;
+  .solutions-tickets {
+    padding-bottom: 90px;   /* reserve space for phone + tags */
   }
 
-  .ticket-tag {
-    font-size: 0.6rem;
-    padding: 6px 10px;
-    border-radius: 6px;
-    animation: none;
-    position: absolute;
-    background: rgba(255,255,255,0.9);
-  }
+}
 
-  .tag-top-left { top: 12%; left: 3%; }
-  .tag-top-right { top: 12%; right: 3%; }
-  .tag-middle-right { top: 42%; right: 5%; }
-  .tag-bottom-left { bottom: 23%; left: 5%; }
-  .tag-bottom-left-overlap { bottom: 3%; left: 3%; }
-  .tag-bottom-right-overlap { bottom: 3%; right: 3%; }
 
-  /* STANDARD FEATURES */
-  .solutions-standard-logo {
-    width: 80px;
-  }
-
-  .solutions-standard-list h3 {
-    font-size: 1.1rem;
-  }
-
-  .solutions-standard-list ul {
-    font-size: 0.85rem;
-  }
 
   /* SEAMLESS EXPERIENCE */
   .solutions-seamless-card {
