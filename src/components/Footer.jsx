@@ -14,7 +14,7 @@ export default function Footer() {
             </p>
             <div className="footer-contact">
               <p><strong>Contact Sales</strong> sales@teraobjects.com</p>
-              <p><strong>Phone</strong> (+91)8089 637 009</p>
+              <p><strong>Phone</strong> (+91) 8089 637 009</p>
             </div>
           </div>
 
@@ -23,8 +23,8 @@ export default function Footer() {
               57 Genting Lane, #04-00 Gani Building, Singapore 349564
             </p>
             <div className="footer-contact">
-              <p><strong>Email</strong> sales@oredicksolutions.com.sg</p>
-              <p><strong>Phone</strong> (+65) 9016 5538</p>
+              <p><strong>Email</strong> sales@oneclicksolutions.com.sg</p>
+              <p><strong>Phone</strong>  +65 901 65 538</p>
             </div>
           </div>
 

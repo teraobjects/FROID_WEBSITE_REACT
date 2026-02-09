@@ -1,12 +1,33 @@
-window.addEventListener("scroll", () => {
-  const img = document.querySelector(".solutions-note-image");
-  if (!img) return;
+// Man image: scroll down → move down + left; scroll up → move right + up
+function initManImageParallax() {
+  var wrapper = document.querySelector(".solutions-note-image-wrapper");
+  var noteSection = document.querySelector(".solutions-note-wrapper");
+  if (!wrapper || !noteSection) return;
 
-  const scrollY = window.scrollY;
-  const offset = scrollY * 0.10;   // control speed
+  function update() {
+    var scrollY = window.scrollY || window.pageYOffset;
+    var rect = noteSection.getBoundingClientRect();
+    var sectionTop = rect.top + scrollY;
+    var viewHeight = window.innerHeight;
+    var start = sectionTop - viewHeight * 0.4;
+    var end = sectionTop + 350;
+    var progress = Math.max(0, Math.min(1, (scrollY - start) / (end - start)));
+    var moveAmount = 45;
+    var x = -(progress - 0.5) * moveAmount * 2;
+    var y = (progress - 0.5) * moveAmount;
+    wrapper.style.transform = "translate(" + x + "px, " + y + "px)";
+    wrapper.style.transition = "transform 0.1s ease-out";
+  }
 
-  img.style.transform = `translateX(${-offset}px)`;
-});
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initManImageParallax);
+} else {
+  initManImageParallax();
+}
 
 const counters = document.querySelectorAll('.counter');
 

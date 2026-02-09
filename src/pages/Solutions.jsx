@@ -1,13 +1,39 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";      
 import Footer from "../components/Footer";
 import CTA from "../components/CTA";
 
 export default function Solutions() {
+  const noteWrapperRef = useRef(null);
+  const [noteImageTransform, setNoteImageTransform] = useState({ x: 0, y: 0 });
 
-  // (No JS logic needed here yet)
+  // Scroll-linked movement: scroll down → image moves down + left; scroll up → right
   useEffect(() => {
-    // Reserved for future animations if needed
+    const noteSection = noteWrapperRef.current;
+    if (!noteSection) return;
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY || window.pageYOffset;
+      const rect = noteSection.getBoundingClientRect();
+      const sectionTop = rect.top + scrollY;
+      const viewHeight = window.innerHeight;
+
+      // When section is in view: map scroll progress to image movement
+      const start = sectionTop - viewHeight * 0.4;
+      const end = sectionTop + 350;
+      const progress = Math.max(0, Math.min(1, (scrollY - start) / (end - start)));
+
+      // Scroll down (more progress) → image moves left (-x) and down (+y); scroll up → right and up
+      const moveAmount = 45;
+      const x = -(progress - 0.5) * moveAmount * 2; // scroll down → negative x (left); scroll up → positive (right)
+      const y = (progress - 0.5) * moveAmount;      // scroll down → positive y (down); scroll up → negative (up)
+
+      setNoteImageTransform({ x, y });
+    };
+
+    handleScroll(); // set initial
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -104,7 +130,7 @@ export default function Solutions() {
 </div>
 
 
-          <div className="solutions-note-wrapper">
+          <div className="solutions-note-wrapper" ref={noteWrapperRef}>
             <p className="solutions-note">
               These challenges cannot be effectively solved using{" "}
               <span className="note-highlight">WhatsApp groups</span>,{" "}
@@ -112,7 +138,13 @@ export default function Solutions() {
               <span className="note-highlight">paper reports</span>.
             </p>
 
-            <div className="solutions-note-image-wrapper">
+            <div
+              className="solutions-note-image-wrapper"
+              style={{
+                transform: `translate(${noteImageTransform.x}px, ${noteImageTransform.y}px)`,
+                transition: "transform 0.1s ease-out",
+              }}
+            >
               <img
                 src="/assets/man holding paper.png"
                 alt="Technician with papers"
