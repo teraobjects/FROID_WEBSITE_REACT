@@ -12,7 +12,7 @@ export default function Demo() {
 
         {/* ================= HERO ================= */}
         <section className="demo-hero">
-          <h1>Request a Demo</h1>
+          <h1>Schedule A Demo</h1>
           <p>
             see how our platform can transform your business.
             schedule a personalized demo with our team and
@@ -81,11 +81,7 @@ export default function Demo() {
                 <input type="hidden" name="access_key" value="002ab0c6-8577-43f7-b66f-cf354cb8d35e" />
                 <input type="hidden" name="subject" value="New Demo Request - Froid" />
 
-                <div className="form-row">
-                  <input type="text" name="First Name" placeholder="Name *" required />
-                  <input type="text" name="Last Name" placeholder="Last Name *" required />
-                </div>
-
+                <input type="text" name="First Name" placeholder="Name *" required />
                 <input type="email" name="Email" placeholder="Work Email *" required />
                 <input type="text" name="Company" placeholder="Company Name " />
                 <input type="tel" name="Phone" placeholder="Phone Number *" required/>

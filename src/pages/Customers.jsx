@@ -49,6 +49,8 @@ export default function Customers() {
                 src="/assets/map-against-white-background 1.png"
                 alt="World Map"
                 className="world-map-image"
+                loading="lazy"
+                decoding="async"
               />
 
               <div className="map-pin pin-1" data-location="India"></div>

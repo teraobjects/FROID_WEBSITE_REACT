@@ -1071,16 +1071,16 @@ img {
   gap: 0px;
 }
 .solutions-challenges-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 3rem;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 3rem;
 }
 
 .solutions-challenges-title-wrapper {
   display: flex;
-  align-items: flex-star;
+  align-items: center;
+  justify-content: center;
   padding-top: 14rem;
 }
 
@@ -2252,7 +2252,7 @@ img {
 .check {
   width: 26px;
   height: 26px;
-  background: #e9ecf4;
+  background: #74e270;
   border-radius: 50%;
   display: flex;
   align-items: center;
