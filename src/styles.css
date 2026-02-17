@@ -472,7 +472,7 @@ img {
 .section-title::after {
   content: "";
   display: block;
-  margin: 20px 0 0 0;
+  margin: 20px auto 0 auto;
   width: 200px;
   height: 5px;
   border-radius: 999px;
@@ -543,6 +543,10 @@ img {
 
 /* Our solution */
 .solution {
+  text-align: center;
+}
+
+.solution .section-title {
   text-align: center;
 }
 
@@ -1071,8 +1075,9 @@ img {
   gap: 0px;
 }
 .solutions-challenges-header {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: center;
   margin-bottom: 3rem;
 }
@@ -1080,8 +1085,8 @@ img {
 .solutions-challenges-title-wrapper {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding-top: 14rem;
+  justify-content: flex-start;
+  padding-top: 0;
 }
 
 .solutions-title {
@@ -1110,7 +1115,8 @@ img {
 
 .solutions-challenges-header-image {
   border-radius: 16px;
-  min-height: 400px;
+  height: 300px;
+  max-width: 400px;
   width: 100%;
   object-fit: cover;
 }
